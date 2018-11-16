@@ -22,14 +22,14 @@ public class MyFilter extends ZuulFilter {
 
     private static final Logger log = LoggerFactory.getLogger(MyFilter.class);
 
-    /** 返回的字符串代表过滤类型，pre--路由之前  routing--路由之时
-                                 post--路由之后  error--发送错误调用*/
+    /** 返回的字符串代表过滤类型，pre--路由之前调用  routing--路由之时调用
+                                 post--路由之后调用  error--发生错误调用*/
     @Override
     public String filterType() {
         return "pre";
     }
 
-    /** 过滤顺序 */
+    /** 通过int值来定义过滤器的执行顺序   数字越大优先级越低*/
     @Override
     public int filterOrder() {
         return 0;
@@ -73,6 +73,9 @@ public class MyFilter extends ZuulFilter {
                 return null;
             }
         }
+        currentContext.setSendZuulResponse(true);
+        currentContext.setResponseStatusCode(200);
+        currentContext.set("isSuccess",true);
         return null;
     }
 }
