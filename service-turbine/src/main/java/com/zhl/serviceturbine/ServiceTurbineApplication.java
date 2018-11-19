@@ -1,4 +1,4 @@
-package com.zhl.servicehi;
+package com.zhl.serviceturbine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,16 +7,20 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.cloud.netflix.turbine.EnableTurbine;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @EnableEurekaClient
-@EnableHystrix
-@EnableCircuitBreaker
-@EnableHystrixDashboard
 @EnableDiscoveryClient
-public class ServiceHiApplication {
+@EnableHystrix
+@EnableHystrixDashboard
+@EnableCircuitBreaker
+@EnableTurbine
+@RestController
+public class ServiceTurbineApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServiceHiApplication.class, args);
+        SpringApplication.run(ServiceTurbineApplication.class, args);
     }
 }
