@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmployeeController {
 
     @Autowired
-    private EmployeeRepository employeeRepository;
+    private EmployeeRepository<C, S> employeeRepository;
 
     //增加
     @RequestMapping("/add")

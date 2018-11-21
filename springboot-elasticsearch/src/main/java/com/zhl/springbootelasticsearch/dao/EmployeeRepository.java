@@ -6,7 +6,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 
 @Component
-public interface EmployeeRepository extends ElasticsearchRepository<Employee,String> {
+public interface EmployeeRepository<C, S> extends ElasticsearchRepository<Employee,String> {
 
     Employee queryEmployeeById(@Param("id") String id);
 
