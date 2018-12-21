@@ -13,7 +13,7 @@ public class InstanceCancelListener implements ApplicationListener<EurekaInstanc
 
     @Override
     public void onApplicationEvent(EurekaInstanceCanceledEvent event) {
-         log.info("服务:{}挂了！！！" + event.getAppName());
+         log.info("服务:{"+event.getAppName()+"}挂了！！！" );
     }
 
 }

@@ -13,7 +13,7 @@ public class InstanceRegisterListener implements ApplicationListener<EurekaInsta
 
     @Override
     public void onApplicationEvent(EurekaInstanceRegisteredEvent event) {
-        log.info("服务:{}注册成功！！！" + event.getInstanceInfo().getAppName());
+        log.info("服务:{"+event.getInstanceInfo().getAppName()+"}注册成功！！！");
     }
 
 }
