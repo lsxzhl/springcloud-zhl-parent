@@ -15,6 +15,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 
 import java.sql.*;
+import java.util.BitSet;
 import java.util.List;
 
 public class TestMongo {
@@ -56,12 +57,17 @@ public class TestMongo {
 
     }
     public void find(String date,Class entryClass){
-        MongoClient mongoClient = new MongoClient( "10.10.21.9" , 27017 );
+        /*MongoClient mongoClient = new MongoClient( "10.10.21.9" , 27017 );
 
         // 连接到数据库
         MongoDatabase mongoDatabase = mongoClient.getDatabase("test");
         MongoCollection<Document> collection = mongoDatabase.getCollection("hh");
         List dt = mongoTemplate.find(new Query(Criteria.where("dt").is(date)), entryClass);
+*/
+        BitSet bitSet = new BitSet();
+
+
+
     }
 
 

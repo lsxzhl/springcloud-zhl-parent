@@ -33,18 +33,21 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>commons-configuration</groupId>
-            <artifactId>commons-configuration</artifactId>
-            <version>20041012.002804</version>
-            <scope>compile</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations-java5</artifactId>
             <version>RELEASE</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.geode/geode-core -->
+        <dependency>
+            <groupId>org.apache.geode</groupId>
+            <artifactId>geode-core</artifactId>
+            <version>1.7.0</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

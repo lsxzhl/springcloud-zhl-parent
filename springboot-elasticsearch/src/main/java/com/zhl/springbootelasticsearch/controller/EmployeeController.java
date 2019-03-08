@@ -1,7 +1,9 @@
 package com.zhl.springbootelasticsearch.controller;
 
+
 import com.zhl.springbootelasticsearch.dao.EmployeeRepository;
 import com.zhl.springbootelasticsearch.entity.Employee;
+import org.elasticsearch.common.recycler.Recycler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmployeeController {
 
     @Autowired
-    private EmployeeRepository<C, S> employeeRepository;
+    private EmployeeRepository employeeRepository;
 
     //增加
     @RequestMapping("/add")
