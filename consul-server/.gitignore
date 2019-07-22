@@ -23,3 +23,5 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+!/consul-server.iml
+/consul-server.iml

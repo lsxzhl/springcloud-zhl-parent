@@ -4,9 +4,13 @@ package com.zhl.springbootelasticsearch.controller;
 import com.zhl.springbootelasticsearch.dao.EmployeeRepository;
 import com.zhl.springbootelasticsearch.entity.Employee;
 import org.elasticsearch.common.recycler.Recycler;
+import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.QueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/es")
@@ -15,8 +19,11 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    @Autowired
+    private ElasticsearchTemplate elasticsearchTemplate;
+
     //增加
-    @RequestMapping("/add")
+    @PostMapping
     public String add(){
 
         Employee employee=new Employee();
@@ -33,7 +40,7 @@ public class EmployeeController {
     }
 
     //删除
-    @RequestMapping("/delete")
+    @DeleteMapping
     public String delete(){
         Employee employee=new Employee();
         employee.setId("1");
@@ -43,7 +50,7 @@ public class EmployeeController {
     }
 
     //局部更新
-    @RequestMapping("/update")
+    @PutMapping
     public String update(){
 
         Employee employee=employeeRepository.queryEmployeeById("1");
@@ -56,7 +63,7 @@ public class EmployeeController {
     }
 
     //查询
-    @RequestMapping("/query")
+    @GetMapping
     public Employee query(){
 
         Employee accountInfo=employeeRepository.queryEmployeeById("1");
@@ -64,6 +71,8 @@ public class EmployeeController {
 
         return accountInfo;
     }
+
+
 
 
 

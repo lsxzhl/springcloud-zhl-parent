@@ -25,3 +25,4 @@ out
 *.pyc
 *.retry
 *.log
+/.idea/
