@@ -1,4 +1,4 @@
-package com.zhl.servicehi.interview.tree;
+package com.zhl.servicehi.interview;
 
 /**
  * @Author: zhanghailong@bitnei.cn
