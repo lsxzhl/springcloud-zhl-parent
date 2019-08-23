@@ -1,4 +1,4 @@
-package com.zhl.servicehi.interview;
+package com.zhl.servicehi.interview.synchro;
 
 import java.util.concurrent.BlockingQueue;
 

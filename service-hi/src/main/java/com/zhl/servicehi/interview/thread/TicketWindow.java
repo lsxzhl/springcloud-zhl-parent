@@ -1,4 +1,4 @@
-package com.zhl.servicehi.interview;
+package com.zhl.servicehi.interview.thread;
 
 /**
  * @Author: zhanghailong@bitnei.cn
@@ -11,14 +11,18 @@ public class TicketWindow implements Runnable {
 
     private int index = 1;
 
+    private final static Object OBJ = new Object();
+
     @Override
     public void run(){
-        while (index <= MAX){
-            System.out.println("柜台：" + Thread.currentThread().getName()+ "  当前号码是：" + (index++));
-            try {
-                Thread.sleep(55);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+        synchronized (OBJ) {
+            while (index <= MAX) {
+                System.out.println("柜台：" + Thread.currentThread().getName() + "  当前号码是：" + (index++));
+                try {
+                    Thread.sleep(55);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

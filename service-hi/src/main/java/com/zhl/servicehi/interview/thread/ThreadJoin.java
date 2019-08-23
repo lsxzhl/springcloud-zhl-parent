@@ -1,4 +1,4 @@
-package com.zhl.servicehi.interview;
+package com.zhl.servicehi.interview.thread;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

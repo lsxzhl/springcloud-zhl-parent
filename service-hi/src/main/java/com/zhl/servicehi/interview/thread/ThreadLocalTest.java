@@ -1,4 +1,4 @@
-package com.zhl.servicehi.interview;
+package com.zhl.servicehi.interview.thread;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
